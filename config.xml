@@ -29,7 +29,8 @@
 	<plugin name="cordova-plugin-password-dialog" source="npm" />
 	<plugin name="cordova-plugin-pin-dialog" source="npm" />
 	<plugin name="cordova-plugin-bluetooth-serial2" source="npm" />
-	<gap:plugin name="hu.dpal.phonegap.plugins.pindialog" version="0.1.3" />
+	<plugin name="cordova-plugin-listpicker" source="npm" />
+	<gap:plugin name="com.manateeworks.barcodescanner" />
 	<access origin="*" />
 
 	<!-- Optional splash screen image, e.g.: -->
