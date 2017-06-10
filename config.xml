@@ -30,8 +30,15 @@
 	<plugin name="cordova-plugin-pin-dialog" source="npm" />
 	<plugin name="cordova-plugin-bluetooth-serial2" source="npm" />
 	<plugin name="cordova-plugin-listpicker" source="npm" />
-	<gap:plugin name="com.manateeworks.barcodescanner" source="npm" />
+	<gap:plugin name="com.manateeworks.barcodescanner" />
+	<plugin name="cordova-plugin-market-ibby" source="npm" />
+	<plugin name="cordova-plugin-badge" source="npm" />
+	<plugin name="cordova-plugin-native-keyboard" source="npm" />
+	<plugin name="cordova-plugin-save-image" source="npm" />
+	<plugin name="cordova-open" source="npm" />
 	<access origin="*" />
+
+	<plugin name="cordova-plugin-inappbrowser" source="npm" />
 
 	<!-- Optional splash screen image, e.g.: -->
 	<!-- <gap:splash src="splash.png" width="1024" height="768" /> -->
