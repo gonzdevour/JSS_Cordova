@@ -30,7 +30,7 @@
 	<plugin name="cordova-plugin-pin-dialog" source="npm" />
 	<plugin name="cordova-plugin-bluetooth-serial2" source="npm" />
 	<plugin name="cordova-plugin-listpicker" source="npm" />
-	<gap:plugin name="com.manateeworks.barcodescanner" />
+	<gap:plugin name="com.manateeworks.barcodescanner" source="npm" />
 	<plugin name="cordova-plugin-market-ibby" source="npm" />
 	<plugin name="cordova-plugin-badge" source="npm" />
 	<plugin name="cordova-plugin-native-keyboard" source="npm" />
