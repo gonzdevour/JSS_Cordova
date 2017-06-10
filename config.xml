@@ -26,7 +26,9 @@
 	<preference name="android-minSdkVersion" value="21" />
 	<plugin name="cordova-plugin-whitelist" source="npm" />
 	<plugin name="cordova-plugin-dialogs" source="npm" />
-    <plugin name="cordova-plugin-password-dialog" source="npm" />
+	<plugin name="cordova-plugin-password-dialog" source="npm" />
+	<plugin name="cordova-plugin-pin-dialog" source="npm" />
+	<plugin name="cordova-plugin-bluetooth-serial2" source="npm" />
 	<access origin="*" />
 
 	<!-- Optional splash screen image, e.g.: -->
