@@ -36,6 +36,8 @@
 	<plugin name="cordova-plugin-native-keyboard" source="npm" />
 	<plugin name="cordova-plugin-save-image" source="npm" />
 	<plugin name="cordova-open" source="npm" />
+	<plugin name="cordova-plugin-media-capture" source="npm" />
+	<plugin name="cordova-barcode-generator" source="npm" />
 	<access origin="*" />
 
 	<plugin name="cordova-plugin-inappbrowser" source="npm" />
