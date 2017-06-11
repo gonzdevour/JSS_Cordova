@@ -33,9 +33,9 @@
 	<gap:plugin name="com.manateeworks.barcodescanner" source="npm" />
 	<plugin name="cordova-plugin-market-ibby" source="npm" />
 	<plugin name="cordova-plugin-badge" source="npm" />
-	<plugin name="cordova-plugin-native-keyboard" source="npm" />
+	<plugin name="cordova-plugin-keyboard" source="npm" />
 	<plugin name="cordova-plugin-save-image" source="npm" />
-	<plugin name="cordova-open" source="npm" />
+	<plugin name="cordova-plugin-file" source="npm" />
 	<plugin name="cordova-plugin-media-capture" source="npm" />
 	<access origin="*" />
 
