@@ -1,30 +1,33 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.playone.jsscordova" version="1.0.0">
-
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<widget id="com.playone.jsscordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 	<name>JSS_Cordova</name>
 	<description>JSS_Cordova</description>
 	<author>playone</author>
 
-	<icon src="icon-128.png" width="128" height="128" />
-	<icon src="icon-256.png" width="256" height="256" gap:role="default" />
+	<icon src="www/icon-256.png" width="256" height="256" density="xxxhdpi" />
+	<icon src="www/icon-128.png" width="128" height="128" density="xhdpi" />
 
-	<preference name="permissions" value="none"/>
 	<preference name="android-targetSdkVersion" value="21" />
-
-	<feature name="http://api.phonegap.com/1.0/network"/>
-	<feature name="http://api.phonegap.com/1.0/geolocation"/>
-	<feature name="http://api.phonegap.com/1.0/camera"/>
-	<feature name="http://api.phonegap.com/1.0/notification"/>
-	<plugin name="cordova-plugin-media" source="npm" />
 
 	<preference name="orientation" value="portrait" />
 	<preference name="fullscreen" value="true" />
-	<gap:config-file platform="ios" parent="UIStatusBarHidden"><true/></gap:config-file>
-	<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance"><false/></gap:config-file>
+	<preference name="DisallowOverscroll" value="true" />
+	<preference name="AllowInlineMediaPlayback" value="true" />
+
+	<config-file parent="UIStatusBarHidden" platform="ios" target="*-Info.plist"><true/></config-file>
+	<config-file parent="UIViewControllerBasedStatusBarAppearance" platform="ios" target="*-Info.plist"><false/></config-file>
+
 
 	<preference name="deployment-target" value="8.0" />
-	<preference name="android-minSdkVersion" value="21" />
-	<plugin name="cordova-plugin-whitelist" source="npm" />
+	<preference name="android-minSdkVersion" value="18" />
+	<access origin="*" />
+
+	<plugin name="cordova-custom-config" />
+	<plugin name="cordova-plugin-crosswalk-webview" />
+	<plugin name="cordova-plugin-inappbrowser" />
+	<plugin name="cordova-plugin-media" />
+	<plugin name="cordova-plugin-statusbar" />
+	<plugin name="cordova-plugin-whitelist" />
 	<plugin name="cordova-plugin-dialogs" source="npm" />
 	<plugin name="cordova-plugin-password-dialog" source="npm" />
 	<plugin name="cordova-plugin-pin-dialog" source="npm" />
@@ -37,11 +40,9 @@
 	<plugin name="cordova-plugin-save-image" source="npm" />
 	<plugin name="cordova-plugin-file" source="npm" />
 	<plugin name="cordova-plugin-media-capture" source="npm" />
-	<access origin="*" />
+	<plugin name="cordova-plugin-lcr" source="npm" spec="~0.2.1" />
 
-	<plugin name="cordova-plugin-inappbrowser" source="npm" />
 
-	<!-- Optional splash screen image, e.g.: -->
-	<!-- <gap:splash src="splash.png" width="1024" height="768" /> -->
-
+	<engine name="ios" />
+	<engine name="android" />
 </widget>
