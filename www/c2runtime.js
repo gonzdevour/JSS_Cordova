@@ -16821,6 +16821,119 @@ cr.plugins_.Rex_Hash = function(runtime)
 }());
 ;
 ;
+cr.plugins_.Rex_JSONBuider = function(runtime)
+{
+	this.runtime = runtime;
+};
+(function ()
+{
+	var pluginProto = cr.plugins_.Rex_JSONBuider.prototype;
+	pluginProto.Type = function(plugin)
+	{
+		this.plugin = plugin;
+		this.runtime = plugin.runtime;
+	};
+	var typeProto = pluginProto.Type.prototype;
+	typeProto.onCreate = function()
+	{
+	};
+	pluginProto.Instance = function(type)
+	{
+		this.type = type;
+		this.runtime = type.runtime;
+	};
+	var instanceProto = pluginProto.Instance.prototype;
+	instanceProto.onCreate = function()
+	{
+        this.clean();
+	};
+	instanceProto.onDestroy = function ()
+	{
+	};
+	instanceProto.clean = function()
+	{
+        this.data = null;
+        this.current_object = null;
+	};
+	instanceProto.add_object = function (k_, type_)
+	{
+        var new_object = (type_===0)? []:{};
+        if (this.data === null)
+            this.data = new_object;
+        else
+            this.add_value(k_, new_object);
+        var previous_object = this.current_object;
+        this.current_object = new_object;
+        var current_frame = this.runtime.getCurrentEventStack();
+        var current_event = current_frame.current_event;
+		var solModifierAfterCnds = current_frame.isModifierAfterCnds();
+        if (solModifierAfterCnds)
+            this.runtime.pushCopySol(current_event.solModifiers);
+        current_event.retrigger();
+        if (solModifierAfterCnds)
+            this.runtime.popSol(current_event.solModifiers);
+        this.current_object = previous_object;
+		return false;
+	};
+	instanceProto.add_value = function (k_, v_)
+	{
+        if (this.current_object == null)
+        {
+            alert("JSON Builder: Please add a key-value into an object.");
+            return;
+        }
+        if (this.current_object instanceof Array)  // add to array
+            this.current_object.push(v_);
+        else                                                               // add to dictionary
+            this.current_object[k_] = v_;
+	};
+	instanceProto.saveToJSON = function ()
+	{
+		return { "d": this.data,
+                };
+	};
+	instanceProto.loadFromJSON = function (o)
+	{
+		this.data = o["d"];
+	};
+	function Cnds() {};
+	pluginProto.cnds = new Cnds();
+	Cnds.prototype.AddObject = function (k_, type_)
+	{
+        return this.add_object(k_, type_);
+	};
+	Cnds.prototype.SetRoot = function (type_)
+	{
+        this.clean();
+        return this.add_object("", type_);
+	};
+	function Acts() {};
+	pluginProto.acts = new Acts();
+    Acts.prototype.Clean = function ()
+	{
+        this.clean();
+	};
+    Acts.prototype.AddValue = function (k_, v_)
+	{
+        this.add_value(k_, v_);
+	};
+    Acts.prototype.AddBooleanValue = function (k_, v_)
+	{
+        this.add_value(k_, (v_ === 1));
+	};
+    Acts.prototype.AddNullValue = function (k_)
+	{
+        this.add_value(k_, null);
+	};
+	function Exps() {};
+	pluginProto.exps = new Exps();
+    Exps.prototype.AsJSON = function (ret)
+	{
+	    ret.set_string( JSON.stringify(this.data) );
+	};
+}());
+;
+;
 cr.plugins_.Rex_canvas = function(runtime)
 {
 	this.runtime = runtime;
@@ -19983,6 +20096,7 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Rex_canvas,
 	cr.plugins_.Rex_jsshell,
 	cr.plugins_.Rex_Hash,
+	cr.plugins_.Rex_JSONBuider,
 	cr.plugins_.rex_TouchWrap,
 	cr.plugins_.Text,
 	cr.system_object.prototype.cnds.IsGroupActive,
@@ -20000,6 +20114,13 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Rex_Hash.prototype.acts.CleanAll,
 	cr.plugins_.Rex_Hash.prototype.acts.StringToHashTable,
 	cr.plugins_.Rex_Hash.prototype.exps.AsJSON,
+	cr.plugins_.Rex_JSONBuider.prototype.acts.Clean,
+	cr.plugins_.Rex_JSONBuider.prototype.acts.AddBooleanValue,
+	cr.plugins_.Rex_JSONBuider.prototype.acts.AddValue,
+	cr.plugins_.Rex_JSONBuider.prototype.exps.AsJSON,
+	cr.plugins_.Text.prototype.acts.AppendText,
+	cr.plugins_.Rex_Hash.prototype.exps.At,
+	cr.system_object.prototype.exps.newline,
 	cr.system_object.prototype.acts.SnapshotCanvas,
 	cr.system_object.prototype.cnds.OnCanvasSnapshot,
 	cr.system_object.prototype.exps.canvassnapshot,

@@ -31,12 +31,14 @@
 	<plugin name="cordova-plugin-password-dialog" source="npm" />
 	<plugin name="cordova-plugin-pin-dialog" source="npm" />
 	<plugin name="cordova-plugin-bluetooth-serial2" source="npm" />
+	<plugin name="phonegap-plugin-barcodescanner" source="npm" />
 	<plugin name="cordova-plugin-market-ibby" source="npm" />
 	<plugin name="cordova-plugin-badge" source="npm" />
 	<plugin name="cordova-plugin-keyboard" source="npm" />
 	<plugin name="cordova-plugin-save-image" source="npm" />
 	<plugin name="cordova-plugin-file" source="npm" />
 	<plugin name="cordova-plugin-media-capture" source="npm" />
+	<plugin name="cordova-plugin-lcr" source="npm" spec="~0.2.1" />
 
 	<engine name="ios" />
 	<engine name="android" />
