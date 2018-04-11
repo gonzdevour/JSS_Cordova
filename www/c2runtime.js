@@ -3477,6 +3477,7 @@ quat4.str=function(a){return"["+a[0]+", "+a[1]+", "+a[2]+", "+a[3]+"]"};
 		this.oldHeight = 0;
 		this.canvas.oncontextmenu = function (e) { if (e.preventDefault) e.preventDefault(); return false; };
 		this.canvas.onselectstart = function (e) { if (e.preventDefault) e.preventDefault(); return false; };
+		this.canvas.ontouchstart = function (e) { if(e.preventDefault) e.preventDefault(); return false; };
 		if (this.isDirectCanvas)
 			window["c2runtime"] = this;
 		if (this.isNWjs)
@@ -13996,14 +13997,14 @@ cr.system_object.prototype.loadFromJSON = function (o)
 	SysExps.prototype.regexmatchcount = function (ret, str_, regex_, flags_)
 	{
 		var regex = getRegex(regex_, flags_);
-		updateRegexMatches(str_, regex_, flags_);
+		updateRegexMatches(str_.toString(), regex_, flags_);
 		ret.set_int(regexMatches ? regexMatches.length : 0);
 	};
 	SysExps.prototype.regexmatchat = function (ret, str_, regex_, flags_, index_)
 	{
 		index_ = Math.floor(index_);
 		var regex = getRegex(regex_, flags_);
-		updateRegexMatches(str_, regex_, flags_);
+		updateRegexMatches(str_.toString(), regex_, flags_);
 		if (!regexMatches || index_ < 0 || index_ >= regexMatches.length)
 			ret.set_string("");
 		else
@@ -19976,8 +19977,8 @@ cr.plugins_.rex_TouchWrap = function(runtime)
     };
 }());
 cr.getObjectRefTable = function () { return [
-	cr.plugins_.Button,
 	cr.plugins_.Browser,
+	cr.plugins_.Button,
 	cr.plugins_.filechooser,
 	cr.plugins_.Rex_canvas,
 	cr.plugins_.Rex_jsshell,
