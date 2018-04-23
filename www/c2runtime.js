@@ -20090,15 +20090,15 @@ cr.plugins_.rex_TouchWrap = function(runtime)
     };
 }());
 cr.getObjectRefTable = function () { return [
-	cr.plugins_.Browser,
 	cr.plugins_.Button,
+	cr.plugins_.Browser,
 	cr.plugins_.filechooser,
-	cr.plugins_.Rex_canvas,
-	cr.plugins_.Rex_jsshell,
-	cr.plugins_.Rex_JSONBuider,
-	cr.plugins_.Rex_Hash,
 	cr.plugins_.rex_TouchWrap,
 	cr.plugins_.Text,
+	cr.plugins_.Rex_canvas,
+	cr.plugins_.Rex_Hash,
+	cr.plugins_.Rex_jsshell,
+	cr.plugins_.Rex_JSONBuider,
 	cr.system_object.prototype.cnds.IsGroupActive,
 	cr.system_object.prototype.cnds.Every,
 	cr.system_object.prototype.acts.SetVar,
