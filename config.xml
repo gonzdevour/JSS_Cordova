@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <<<<<<< HEAD
 <widget id="com.iegoart.lcr" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-=======
-<widget id="com.iegoart.lcr" version="1.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
->>>>>>> origin/master
 	<name>JSS_Cordova</name>
 	<description>JSS_Cordova</description>
 	<author>playone</author>
