@@ -3,9 +3,8 @@
 	<name>JSS_Cordova</name>
 	<description>JSS_Cordova</description>
 	<author>playone</author>
-
-	<icon src="www/icon-256.png" width="256" height="256" density="xxxhdpi" />
-	<icon src="www/icon-128.png" width="128" height="128" density="xhdpi" />
+	
+	<icon src="www/icon.png" />
 
 	<preference name="android-targetSdkVersion" value="26" />
 
