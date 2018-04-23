@@ -40,7 +40,7 @@
 	<plugin name="cordova-plugin-save-image" source="npm" />
 	<plugin name="cordova-plugin-file" source="npm" />
 	<plugin name="cordova-plugin-media-capture" source="npm" />
-	<plugin name="cordova-plugin-lcr" source="npm" spec="~0.2.1" />
+	<plugin name="cordova-plugin-lcs" source="npm"/>
 
 	<engine name="ios" />
 	<engine name="android" />
