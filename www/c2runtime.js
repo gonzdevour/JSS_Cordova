@@ -20120,7 +20120,6 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Rex_Hash.prototype.acts.StringToHashTable,
 	cr.system_object.prototype.exps["int"],
 	cr.plugins_.Rex_Hash.prototype.exps.At,
-	cr.plugins_.Rex_Hash.prototype.exps.AsJSON,
 	cr.system_object.prototype.cnds.IsOnPlatform,
 	cr.plugins_.Rex_jsshell.prototype.acts.AddObject,
 	cr.plugins_.Rex_canvas.prototype.acts.LoadURL,
