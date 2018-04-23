@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<<<<<<< HEAD
 <widget id="com.iegoart.lcr" version="1.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-
 	<name>JSS_Cordova</name>
 	<description>JSS_Cordova</description>
 	<author>playone</author>
 
+	<icon src="www/icon-256.png" width="256" height="256" density="xxxhdpi" />
+	<icon src="www/icon-128.png" width="128" height="128" density="xhdpi" />
 	<icon src="www/icon-256.png" width="256" height="256" density="xxxhdpi" />
 	<icon src="www/icon-128.png" width="128" height="128" density="xhdpi" />
 	<!-- iOS 8.0+ -->
@@ -51,7 +51,7 @@
 
 	<preference name="deployment-target" value="8.0" />
 	<preference name="android-minSdkVersion" value="21" />
-
+	<preference name="phonegap-version" value="cli-7.1.0" />
 	<access origin="*" />
 
 	<plugin name="cordova-custom-config" />
